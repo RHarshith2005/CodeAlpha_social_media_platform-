@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO_SOCIAL Home Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Neo-LoFi Specific Utilities */
+        .dither-bg {
+            background-image: repeating-linear-gradient(45deg, #1a1c1c 25%, transparent 25%, transparent 75%, #1a1c1c 75%, #1a1c1c), repeating-linear-gradient(45deg, #1a1c1c 25%, transparent 25%, transparent 75%, #1a1c1c 75%, #1a1c1c);
+            background-position: 0 0, 2px 2px;
+            background-size: 4px 4px;
+            opacity: 0.1;
+        }
+        
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #1a1c1c;
+            transition: all 0.1s ease-in-out;
+        }
+        
+        .hard-shadow:active {
+            box-shadow: 0px 0px 0px 0px #1a1c1c;
+            transform: translate(4px, 4px);
+        }
+
+        .border-neo {
+            border: 2px solid #1a1c1c;
+        }
+
+        .text-shadow-neo {
+            text-shadow: 2px 2px 0px #abd600;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#5e5e5e",
+                      "surface-container-highest": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#abd600",
+                      "surface-tint": "#506600",
+                      "secondary-container": "#e2e2e2",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "surface-dim": "#dadada",
+                      "on-surface": "#1a1c1c",
+                      "on-background": "#1a1c1c",
+                      "primary-container": "#ccff00",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#161e00",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#ededed",
+                      "outline": "#747a60",
+                      "surface-variant": "#e2e2e2",
+                      "secondary-fixed": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "surface-container": "#eeeeee",
+                      "surface-container-high": "#e8e8e8",
+                      "surface": "#f9f9f9",
+                      "on-tertiary-container": "#696b6b",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#3c4d00",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#646464",
+                      "on-surface-variant": "#444933",
+                      "background": "#f9f9f9",
+                      "outline-variant": "#c4c9ac",
+                      "on-error": "#ffffff",
+                      "primary": "#506600",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary": "#5d5f5f",
+                      "inverse-primary": "#abd600",
+                      "surface-bright": "#f9f9f9",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-primary-container": "#5b7300",
+                      "primary-fixed": "#c3f400",
+                      "on-secondary-fixed-variant": "#474747",
+                      "tertiary-fixed": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "border-width": "2px",
+                      "hard-shadow-offset": "4px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "DotGothic16"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "DotGothic16"
+                      ],
+                      "headline-xl": [
+                              "DotGothic16"
+                      ],
+                      "headline-lg-mobile": [
+                              "DotGothic16"
+                      ],
+                      "headline-sm": [
+                              "DotGothic16"
+                      ],
+                      "body-lg": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-x-hidden pt-16 pb-20 md:pb-0">
+<!-- Global Dither Pattern Background -->
+<div class="fixed inset-0 pointer-events-none z-[-1] dither-bg"></div>
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface w-full fixed top-0 border-b-2 border-on-surface dark:border-on-background flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 z-50">
+<button class="text-secondary dark:text-secondary-fixed-dim hover:bg-primary hover:text-on-primary transition-colors duration-75 active:translate-x-0.5 active:translate-y-0.5 p-2 border-neo hard-shadow bg-surface-container-lowest">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim uppercase tracking-tighter text-shadow-neo">
+            NEO_SOCIAL
+        </h1>
+<button class="text-secondary dark:text-secondary-fixed-dim hover:bg-primary hover:text-on-primary transition-colors duration-75 active:translate-x-0.5 active:translate-y-0.5 p-2 border-neo hard-shadow bg-surface-container-lowest">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-3xl mx-auto px-margin-mobile md:px-0 py-8 space-y-8">
+<!-- Post 1: Image -->
+<article class="bg-surface-container-lowest border-neo hard-shadow overflow-hidden">
+<!-- Title Bar -->
+<div class="bg-on-background px-4 py-2 border-b-2 border-on-background flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">SYS_USER_01</span>
+<span class="font-label-caps text-label-caps text-surface-dim">12:04:01</span>
+</div>
+<!-- Content -->
+<div class="p-4 border-b-2 border-on-surface bg-surface">
+<img alt="Retro server room" class="w-full h-auto border-neo block filter grayscale contrast-125" data-alt="A highly detailed dithered 3D render of a retro-futuristic server room bathed in stark, high-contrast white and Electric Lime lighting. The aesthetic is explicitly Neo-LoFi and Digital Brutalist. Thick black cables snake across a gridded floor. The mood is clinical, technical, and slightly nostalgic for 1995 cyberspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgO4nfbUGPHUlurGasaMjG5EVYBSjkl1iSc38otSi9DFZdDq8ER50F0L0bxDXCqowAKSuoFA6afXbqWpLrFwDgfA4tPKXY1LMkXERxG6WsYdfXspYnfqSWK_7MRQT3QdtkSUyEvUN4zwlEsat70mkoUhr8oK--YXxG62D69L0CvFwpB3Ed_-yWyDnW3MWhGd2kWQwrX1N1OJY_-OEwfaXh7XQEed_uHLWE5OkBngnL8nqrGlIPXiWA75Q2bPcTLTR_sLz8HFxtNMY"/>
+</div>
+<!-- Actions -->
+<div class="flex justify-between items-center p-4 bg-surface-container-low">
+<div class="flex space-x-4">
+<button class="hover:bg-primary-container hover:text-on-primary-container p-2 border-neo transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="hover:bg-primary-container hover:text-on-primary-container p-2 border-neo transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<button class="font-label-caps text-label-caps border-neo px-4 py-2 hover:bg-on-background hover:text-surface-container-lowest transition-colors uppercase">
+                    Share
+                </button>
+</div>
+<!-- Caption -->
+<div class="p-4 bg-surface-container-lowest font-body-sm text-on-surface-variant border-t-2 border-on-surface">
+<p>INITIALIZING SEQUENCE. Rendering test environment alpha_0.9. Integrity checks complete.</p>
+</div>
+</article>
+<!-- Post 2: Text Status -->
+<article class="bg-surface-container-lowest border-neo hard-shadow overflow-hidden">
+<div class="bg-primary px-4 py-2 border-b-2 border-on-background flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-primary">SYSTEM_BROADCAST</span>
+<span class="font-label-caps text-label-caps text-on-primary">09:12:44</span>
+</div>
+<div class="p-6 bg-surface dither-bg border-b-2 border-on-surface">
+<p class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">
+                    NETWORK STABILITY COMPROMISED. RE-ROUTING TO SECONDARY NODES. EXPECT LATENCY FLUCTUATIONS.
+                </p>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface-container-low">
+<div class="flex space-x-4">
+<button class="bg-primary-container text-on-primary-container p-2 border-neo transition-colors hard-shadow">
+<span class="material-symbols-outlined" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+<button class="hover:bg-primary-container hover:text-on-primary-container p-2 border-neo transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<div class="font-label-caps text-label-caps bg-surface-container-high border-neo px-2 py-1">
+                    ERR_CODE: 409
+                </div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-stretch bg-surface dark:bg-inverse-surface border-t-2 border-on-surface dark:border-on-background">
+<!-- Active Tab: FEED -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary border-2 border-on-surface h-full px-4 flex-1 hover:bg-primary-fixed dark:hover:bg-primary-fixed-dim hover:text-on-primary-fixed active:translate-x-0.5 active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-1">FEED</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-on-background h-full px-4 flex-1 hover:bg-primary-fixed dark:hover:bg-primary-fixed-dim hover:text-on-primary-fixed active:translate-x-0.5 active:translate-y-0.5 border-r-2 border-on-surface">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+<span class="font-label-caps text-label-caps mt-1">SAVE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-on-background h-full px-4 flex-1 hover:bg-primary-fixed dark:hover:bg-primary-fixed-dim hover:text-on-primary-fixed active:translate-x-0.5 active:translate-y-0.5 border-r-2 border-on-surface">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+<span class="font-label-caps text-label-caps mt-1">FILES</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface dark:text-on-background h-full px-4 flex-1 hover:bg-primary-fixed dark:hover:bg-primary-fixed-dim hover:text-on-primary-fixed active:translate-x-0.5 active:translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-caps text-label-caps mt-1">USER</span>
+</button>
+</nav>
+<!-- Side/Top Navigation Cluster (Desktop Only) -->
+<nav class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-4rem)] w-24 flex-col items-center py-8 border-r-2 border-on-surface bg-surface-container-lowest z-40">
+<div class="space-y-8 w-full px-4">
+<button class="w-full flex flex-col items-center justify-center bg-primary-container text-on-primary-container border-neo py-4 hard-shadow hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-2 block">FEED</span>
+</button>
+<button class="w-full flex flex-col items-center justify-center text-on-surface border-neo py-4 hover:bg-primary hover:text-on-primary transition-colors hover:hard-shadow">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+</button>
+<button class="w-full flex flex-col items-center justify-center text-on-surface border-neo py-4 hover:bg-primary hover:text-on-primary transition-colors hover:hard-shadow">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+</button>
+<button class="w-full flex flex-col items-center justify-center text-on-surface border-neo py-4 hover:bg-primary hover:text-on-primary transition-colors hover:hard-shadow mt-auto">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</body></html>

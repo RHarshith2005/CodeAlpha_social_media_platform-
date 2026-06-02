@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Index - NEO_SOCIAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline-variant": "#c4c9ac",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#ededed",
+                        "tertiary": "#5d5f5f",
+                        "on-primary-fixed": "#161e00",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "primary-fixed-dim": "#abd600",
+                        "primary-container": "#ccff00",
+                        "on-primary-container": "#5b7300",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#abd600",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-tint": "#506600",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#c3f400",
+                        "on-secondary": "#ffffff",
+                        "primary": "#506600",
+                        "on-secondary-container": "#646464",
+                        "background": "#f9f9f9",
+                        "secondary-container": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#696b6b",
+                        "outline": "#747a60",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#444933",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#eeeeee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "border-width": "2px",
+                        "hard-shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DotGothic16"],
+                        "headline-lg-mobile": ["DotGothic16"],
+                        "body-md": ["JetBrains Mono"],
+                        "body-sm": ["JetBrains Mono"],
+                        "body-lg": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["DotGothic16"],
+                        "headline-xl": ["DotGothic16"],
+                        "headline-sm": ["DotGothic16"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .dither-pattern {
+            background-image: radial-gradient(#1a1c1c 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+        .neo-button {
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .neo-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: none !important;
+        }
+        /* Custom scrollbar for horizontal lists */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-on-background border-b-spacing-border-width border-on-background dark:border-primary-fixed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_#abd600]">
+<div class="flex justify-between items-center w-full px-margin-mobile py-unit">
+<button class="text-primary dark:text-primary-fixed neo-button active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:bg-primary-container hover:text-on-primary-container p-2 border-spacing-border-width border-transparent hover:border-on-background transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed uppercase tracking-tighter">NEO_SOCIAL</h1>
+<div class="hidden md:flex gap-gutter items-center">
+<nav class="flex gap-4">
+<a class="font-label-caps text-label-caps text-on-background dark:text-surface-variant hover:bg-primary-container hover:text-on-primary-container px-2 py-1 border-spacing-border-width border-transparent hover:border-on-background transition-colors" href="#">FEED</a>
+<a class="font-label-caps text-label-caps text-primary-fixed bg-on-background px-2 py-1 border-spacing-border-width border-on-background transition-colors" href="#">SCAN</a>
+<a class="font-label-caps text-label-caps text-on-background dark:text-surface-variant hover:bg-primary-container hover:text-on-primary-container px-2 py-1 border-spacing-border-width border-transparent hover:border-on-background transition-colors" href="#">MAIL</a>
+<a class="font-label-caps text-label-caps text-on-background dark:text-surface-variant hover:bg-primary-container hover:text-on-primary-container px-2 py-1 border-spacing-border-width border-transparent hover:border-on-background transition-colors" href="#">USER</a>
+</nav>
+</div>
+<button class="text-primary dark:text-primary-fixed neo-button active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:bg-primary-container hover:text-on-primary-container p-2 border-spacing-border-width border-transparent hover:border-on-background transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 flex flex-col gap-12">
+<!-- Search Section -->
+<section class="w-full flex flex-col gap-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase border-b-spacing-border-width border-on-background pb-2">DISCOVER THE VOID</h2>
+<div class="relative w-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-on-background">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border-spacing-border-width border-on-background p-4 pl-12 font-body-lg text-body-lg text-on-background placeholder:text-secondary focus:outline-none focus:ring-0 focus:bg-primary-container focus:border-on-background transition-colors" placeholder="QUERY://..." type="text"/>
+<button class="absolute inset-y-0 right-0 px-6 bg-on-background text-on-primary font-label-caps text-label-caps border-l-spacing-border-width border-on-background hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center neo-button">
+                    EXECUTE
+                </button>
+</div>
+<div class="flex gap-2 flex-wrap mt-2">
+<span class="font-label-caps text-label-caps bg-surface-container-highest border-spacing-border-width border-on-background px-3 py-1 hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">#GLITCH_ART</span>
+<span class="font-label-caps text-label-caps bg-surface-container-highest border-spacing-border-width border-on-background px-3 py-1 hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">#LOFI_BEATS</span>
+<span class="font-label-caps text-label-caps bg-surface-container-highest border-spacing-border-width border-on-background px-3 py-1 hover:bg-primary-container hover:text-on-primary-container cursor-pointer transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">#CYBER_PUNK</span>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- SIGHTS -->
+<div class="group relative border-spacing-border-width border-on-background bg-surface-container-lowest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_#ccff00] transition-shadow cursor-pointer overflow-hidden h-48 md:h-64 flex flex-col justify-end p-4">
+<div class="absolute inset-0 dither-pattern opacity-20 group-hover:opacity-100 group-hover:bg-primary-container transition-all z-0"></div>
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity opacity-40 group-hover:opacity-10 transition-opacity z-10" data-alt="Abstract digital glitch art showing horizontal bands of interference patterns in high contrast black and white. The aesthetic is heavily pixelated and chaotic, evoking a raw 90s terminal screen malfunction. Subtle geometric distortions create a sense of raw digital energy against a harsh, bright background."></div>
+<div class="relative z-20 flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md bg-on-background text-on-primary px-2 py-1 inline-block border-spacing-border-width border-on-background">SIGHTS</h3>
+<span class="material-symbols-outlined text-4xl group-hover:text-primary-container transition-colors bg-on-background text-on-primary p-1 border-spacing-border-width border-on-background" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- SOUNDS -->
+<div class="group relative border-spacing-border-width border-on-background bg-surface-container-lowest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_#ccff00] transition-shadow cursor-pointer overflow-hidden h-48 md:h-64 flex flex-col justify-end p-4">
+<div class="absolute inset-0 dither-pattern opacity-20 group-hover:opacity-100 group-hover:bg-primary-container transition-all z-0"></div>
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity opacity-40 group-hover:opacity-10 transition-opacity z-10" data-alt="A close up view of an analog synthesizer console rendered in a stark, high-contrast black and white palette. Knobs, sliders, and audio cables form a dense, technical landscape. The lighting is harsh and directional, emphasizing the utilitarian brutalist aesthetic of electronic music production hardware."></div>
+<div class="relative z-20 flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md bg-on-background text-on-primary px-2 py-1 inline-block border-spacing-border-width border-on-background">SOUNDS</h3>
+<span class="material-symbols-outlined text-4xl group-hover:text-primary-container transition-colors bg-on-background text-on-primary p-1 border-spacing-border-width border-on-background" data-icon="graphic_eq">graphic_eq</span>
+</div>
+</div>
+<!-- VIBES -->
+<div class="group relative border-spacing-border-width border-on-background bg-surface-container-lowest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_#ccff00] transition-shadow cursor-pointer overflow-hidden h-48 md:h-64 flex flex-col justify-end p-4">
+<div class="absolute inset-0 dither-pattern opacity-20 group-hover:opacity-100 group-hover:bg-primary-container transition-all z-0"></div>
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&amp;w=1969&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-luminosity opacity-40 group-hover:opacity-10 transition-opacity z-10" data-alt="A stark, minimalist architectural interior featuring heavy concrete forms and sharp geometric angles. Deep shadows cut across bright white walls, creating a sense of isolation and structured depth. The scene is devoid of organic shapes, focusing purely on industrial precision and neo-lofi brutalist atmosphere."></div>
+<div class="relative z-20 flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md bg-on-background text-on-primary px-2 py-1 inline-block border-spacing-border-width border-on-background">VIBES</h3>
+<span class="material-symbols-outlined text-4xl group-hover:text-primary-container transition-colors bg-on-background text-on-primary p-1 border-spacing-border-width border-on-background" data-icon="storm">storm</span>
+</div>
+</div>
+</section>
+<!-- Featured Void State Card -->
+<section class="w-full">
+<div class="border-spacing-border-width border-on-background bg-surface-container-lowest shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative">
+<!-- Title Bar -->
+<div class="bg-on-background text-on-primary px-4 py-2 border-b-spacing-border-width border-on-background flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm">FEATURED_NODE.exe</h3>
+<div class="flex gap-2">
+<div class="w-3 h-3 bg-surface-container-highest border-spacing-border-width border-surface-container-highest"></div>
+<div class="w-3 h-3 bg-surface-container-highest border-spacing-border-width border-surface-container-highest"></div>
+<div class="w-3 h-3 bg-on-primary border-spacing-border-width border-surface-container-highest"></div>
+</div>
+</div>
+<!-- Content Canvas -->
+<div class="relative h-[300px] md:h-[400px] w-full bg-on-background overflow-hidden flex items-center justify-center p-4">
+<!-- Dithered Background Pattern inside card -->
+<div class="absolute inset-0 dither-pattern opacity-30 mix-blend-screen pointer-events-none"></div>
+<!-- Abstract Image -->
+<div class="absolute inset-4 border-spacing-border-width border-primary-container bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=1964&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-screen opacity-80" data-alt="A complex, generative abstract landscape rendered in bright electric lime green against a deep black background. The forms are fluid yet distinctly digital, composed of wireframe meshes and pixelated artifacts that suggest a synthetic terrain. High contrast lighting highlights the jagged edges of this brutalist digital topography."></div>
+<!-- Overlay Box -->
+<div class="relative z-10 bg-on-background border-spacing-border-width border-primary-container p-6 shadow-[8px_8px_0px_0px_#ccff00] max-w-md text-center transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+<h4 class="font-headline-xl text-headline-xl text-primary-container uppercase leading-none mb-4">THE<br/>VOID<br/>STATE</h4>
+<p class="font-body-md text-body-md text-on-primary mb-6">Enter the sector of pure signal. Disconnect from the noise.</p>
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-8 py-3 border-spacing-border-width border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-on-background hover:text-primary-container hover:border-primary-container neo-button w-full flex items-center justify-center gap-2">
+<span>INITIATE SEQUENCE</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch z-50 bg-surface dark:bg-on-background border-t-spacing-border-width border-on-background dark:border-primary-fixed no-shadow">
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-surface-variant h-full w-full hover:bg-surface-container-highest dark:hover:bg-on-surface-variant active:bg-primary-container" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-label-caps text-label-caps">FEED</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed h-full w-full active:bg-primary-container" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="qr_code_scanner" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps">SCAN</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-surface-variant h-full w-full hover:bg-surface-container-highest dark:hover:bg-on-surface-variant active:bg-primary-container" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="alternate_email">alternate_email</span>
+<span class="font-label-caps text-label-caps">MAIL</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface dark:text-surface-variant h-full w-full hover:bg-surface-container-highest dark:hover:bg-on-surface-variant active:bg-primary-container" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-label-caps text-label-caps">USER</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Folio - Alex Chen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline-variant": "#c4c9ac",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#ededed",
+                        "tertiary": "#5d5f5f",
+                        "on-primary-fixed": "#161e00",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "primary-fixed-dim": "#abd600",
+                        "primary-container": "#ccff00",
+                        "on-primary-container": "#5b7300",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#abd600",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-tint": "#506600",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#c3f400",
+                        "on-secondary": "#ffffff",
+                        "primary": "#506600",
+                        "on-secondary-container": "#646464",
+                        "background": "#f9f9f9",
+                        "secondary-container": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#696b6b",
+                        "outline": "#747a60",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#444933",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#eeeeee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "border-width": "2px",
+                        "hard-shadow-offset": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DotGothic16"],
+                        "headline-lg-mobile": ["DotGothic16"],
+                        "body-md": ["JetBrains Mono"],
+                        "body-sm": ["JetBrains Mono"],
+                        "body-lg": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["DotGothic16"],
+                        "headline-xl": ["DotGothic16"],
+                        "headline-sm": ["DotGothic16"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .dither-bg {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="2" height="2" fill="rgba(0,0,0,0.1)"/><rect x="2" y="2" width="2" height="2" fill="rgba(0,0,0,0.1)"/></svg>');
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .neo-shadow-active:active {
+            box-shadow: none;
+            transform: translate(4px, 4px);
+        }
+        .neo-border {
+            border: 2px solid #1a1c1c;
+        }
+        
+        /* Hide scrollbar for clean look but allow scrolling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9;
+            border-left: 2px solid #1a1c1c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1c1c;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ccff00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar from JSON -->
+<header class="w-full top-0 sticky border-b-spacing-border-width border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex justify-between items-center px-margin-mobile py-unit bg-surface z-40">
+<div class="flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors p-1 neo-border active:translate-x-0.5 active:translate-y-0.5 active:shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-tighter">
+            NEO_SOCIAL
+        </div>
+<div class="flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors p-1 neo-border active:translate-x-0.5 active:translate-y-0.5 active:shadow-none cursor-pointer">
+<span class="material-symbols-outlined text-primary">settings</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 mb-24 md:mb-0">
+<!-- Profile Header Bento -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-gutter">
+<!-- Avatar Window -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest neo-border neo-shadow relative h-64 md:h-80 flex flex-col group">
+<div class="bg-on-background text-surface-container-lowest font-label-caps text-label-caps px-2 py-1 flex justify-between items-center border-b-2 border-on-background">
+<span>SYS.AVATAR.OBJ</span>
+<span class="material-symbols-outlined text-sm">close</span>
+</div>
+<div class="relative flex-grow overflow-hidden dither-bg p-2">
+<img alt="Alex Chen Profile" class="w-full h-full object-cover filter grayscale contrast-125 border-2 border-on-background" data-alt="A gritty, high-contrast black and white portrait photo of a young tech professional named Alex. The image uses a lo-fi, grainy texture reminiscent of early digital cameras or photocopies. The lighting is harsh and direct, creating strong shadows and an intense, engineered aesthetic. The background is a stark, textured wall. The mood is unapologetically brutalist and raw." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp0RXWV3pkK_1xGcuViBRwIPeH9cBbPgs07B3p24jUrqe15_GIkOHMMV5_4-hilWFvAzfgubzyBS_fWgvycsIgMLjlpQTkfZzIbITkjNLkuLFtRY-qknmLcHUU2wUSjAPu22noR_ZZZNIwc3tGKSulQCbKMkIQ645OmRmNH6M6YGTJTvyN9epnNGhWMi9BMUYNWU4UQUQlcHSwvSXx-MHaTqpg4CsOou5F5Kv5X0pXTxIvj81bFFNxF30oofxfLEM8TmHGOl2dYNE"/>
+<!-- Scanline effect overlay -->
+<div class="absolute inset-2 pointer-events-none opacity-20" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, #000 2px, #000 4px);"></div>
+</div>
+</div>
+<!-- Stats & Bio Info -->
+<div class="col-span-1 md:col-span-8 flex flex-col gap-gutter">
+<!-- Name & Title -->
+<div class="bg-surface-container-lowest neo-border neo-shadow p-4 md:p-6 flex flex-col justify-between">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-2">ALEX_CHEN</h1>
+<div class="inline-block bg-on-background text-primary-container font-label-caps text-label-caps px-2 py-1 mb-4">
+                            ROLE: DIGITAL_ARCHIVIST // STATUS: ONLINE
+                        </div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="bg-primary-container text-on-background neo-border neo-shadow neo-shadow-active font-label-caps text-label-caps px-6 py-3 flex items-center justify-center gap-2 hover:bg-surface-container-lowest transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined">add</span>
+                            FOLLOW_USER
+                        </button>
+<button class="bg-surface-container-lowest text-on-background neo-border neo-shadow neo-shadow-active font-label-caps text-label-caps px-6 py-3 flex items-center justify-center gap-2 hover:bg-primary-container transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined">mail</span>
+                            PING
+                        </button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest neo-border neo-shadow p-4 hover:bg-primary-container transition-colors cursor-crosshair">
+<div class="font-label-caps text-label-caps text-secondary mb-1">CURATIONS</div>
+<div class="font-headline-md text-headline-md text-on-background tracking-tight">142</div>
+</div>
+<div class="bg-surface-container-lowest neo-border neo-shadow p-4 hover:bg-primary-container transition-colors cursor-crosshair">
+<div class="font-label-caps text-label-caps text-secondary mb-1">VISIONARIES</div>
+<div class="font-headline-md text-headline-md text-on-background tracking-tight">84.2K</div>
+</div>
+</div>
+<!-- Terminal Bio -->
+<div class="bg-on-background text-surface-bright neo-border neo-shadow flex flex-col flex-grow">
+<div class="bg-surface-container-lowest text-on-background font-label-caps text-label-caps px-2 py-1 border-b-2 border-on-background flex justify-between">
+<span>~bash/bio.sh</span>
+<span class="opacity-50">v1.0.4</span>
+</div>
+<div class="p-4 font-body-sm text-body-sm text-primary-fixed-dim leading-relaxed">
+                        &gt; executing query: SELECT bio FROM users WHERE id = 'alex_c'...<br/>
+                        &gt; result found.<br/>
+<br/>
+<span class="text-surface-bright">
+                        Documenting the collision of physical space and digital entropy. 
+                        Obsessed with high-contrast architecture, obsolete hardware interfaces, 
+                        and the stark beauty of unpolished data.
+                        </span><br/>
+<br/>
+                        &gt; LOC: TOKYO // NEO-SF<br/>
+<span class="animate-pulse">_</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Archive Section -->
+<div class="mt-12">
+<div class="flex items-center gap-4 mb-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background bg-primary-container px-2 border-2 border-on-background inline-block neo-shadow">/DATA_ARCHIVE/</h2>
+<div class="h-0.5 bg-on-background flex-grow"></div>
+</div>
+<!-- Asymmetric Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Item 1 -->
+<div class="col-span-1 sm:col-span-2 md:col-span-2 bg-surface-container-lowest neo-border neo-shadow p-2 flex flex-col group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-full h-64 md:h-80 border-2 border-on-background relative overflow-hidden mb-2">
+<img alt="Abstract Architecture" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A brutalist concrete architectural structure shot in stark, high-contrast lighting. The image emphasizes harsh geometric lines, deep black shadows, and bright white highlights. The texture is grainy and lo-fi, suggesting an archival or surveillance perspective. A subtle, engineered, and rebellious aesthetic dominates the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEFQCCApV8KjkiHsjrqSz8Xvb6G7OzU4hwXBQlg8Ag9Lbvfmzapk8fB9AG00EXGLAZ8suRvpsg4vTdcbeRmvV3I6IHWjDrfvC_6pQIZjeRUMlPbYy5s5A9zJqlm9iRZ1WaSI5zEGcMnX1OLGr0JQx8bsnTw5JV6g4v8bCJHAbWTvsVdF1uKqSaKy_Pqzlcx37dVe4FDQV3ceTgwJq97BdME7er4SCGFtBFwd3nyu9agviTraIK1n8QHq9ZUpikzloCWfSTcddtCow"/>
+<div class="absolute top-2 left-2 bg-on-background text-primary-fixed font-label-caps text-label-caps px-1">ERR_CODE: 404</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="font-body-md text-body-md font-bold">STRUCTURAL_DECAY.RAW</div>
+<div class="font-label-caps text-label-caps text-secondary">2.4MB</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="col-span-1 bg-surface-container-lowest neo-border neo-shadow p-2 flex flex-col group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-full h-64 md:h-80 border-2 border-on-background relative overflow-hidden mb-2 dither-bg">
+<img alt="Server Rack" class="w-full h-full object-cover filter grayscale contrast-150 group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" data-alt="A dense, complex server rack bathed in high-contrast monochromatic lighting. Cables and blinking lights are reduced to raw geometric patterns. The image has a heavy digital grain, looking like a frame captured from a 1990s hacker terminal. The aesthetic is purely functional and unapologetically technical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ckZ0PtIFrx2aT_36Io9-oCVXvLKlhZCMucwkw0bzKWxo6AeaMWMzObQCsXCKfK8afj1dhukCIw0Gawy_4ndU5bzrka-XLCMJKCaLbDi8lKVciSyzsGLfzNdqy2lc1nOZqMzw_Eeqnzcxh31q31QQca_JJfhDr_vPo2tMJSV7TIEnY5aF1fhJ0x14v84QvlKXhyCAaaBz3WG_e03dKJaYfHyCZbjLpMqYbOba009iDHi4rTcMs5U_JTN0fp_-ZmRUFyUlOFtmIBI"/>
+<div class="absolute top-2 left-2 bg-on-background text-primary-fixed font-label-caps text-label-caps px-1">ERR_CODE: 200</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="font-body-md text-body-md font-bold">NODE_X9.LOG</div>
+<div class="font-label-caps text-label-caps text-secondary">18KB</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="col-span-1 bg-surface-container-lowest neo-border neo-shadow p-2 flex flex-col group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-full h-48 border-2 border-on-background relative overflow-hidden mb-2">
+<img alt="Matrix Code" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="A screen displaying raw, chaotic data streams and terminal text. The image is rendered in high-contrast black and white with a heavy pixelated texture, mimicking a low-resolution monitor from the early digital era. The focus is on the abstract, brutal beauty of raw information." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAadW5b_wr53Dizd1w2EVoKHyrSFPn6BxlCvRXfazYmfm5tTNVtflp2vLf9GKmWwAwRrrYtUxBWYX5jmK80EjkVqlWOJDEYPT514Upr00diDyCh-f0G-KwWukA3_OVh7DppTfCAbv8uK9-w1xqs9qXUVrXCHnT9qcvtURdtAtv-5_X-xFlpflutB7u2NVIJoMIcU-sn8rRAi-DqEJYLvQc7gUy5nXJV70wagpY5cXn0qgsc4Nw8z2ubWChTLqvJeboYabTEGf4xZlI"/>
+<div class="absolute bottom-2 right-2 bg-primary-container text-on-background font-label-caps text-label-caps px-1 border-2 border-on-background">SYS_DUMP</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="font-body-md text-body-md font-bold">MEMORY_LEAK</div>
+<span class="material-symbols-outlined text-secondary text-sm">download</span>
+</div>
+</div>
+<!-- Item 4 (Text Only Card) -->
+<div class="col-span-1 sm:col-span-2 md:col-span-1 bg-on-background text-surface-bright neo-border neo-shadow p-4 flex flex-col justify-between group cursor-pointer hover:bg-primary hover:text-on-primary transition-colors">
+<div>
+<div class="font-headline-md text-headline-md mb-2">MANIFESTO_V2</div>
+<div class="font-body-sm text-body-sm opacity-80 font-mono mb-4">
+                            "The interface is not a window; it is a wall we have chosen to paint."
+                        </div>
+</div>
+<div class="flex justify-between items-center border-t border-surface-bright pt-2">
+<div class="font-label-caps text-label-caps">TEXT_FILE</div>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="col-span-1 bg-surface-container-lowest neo-border neo-shadow p-2 flex flex-col group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-full h-48 border-2 border-on-background relative overflow-hidden mb-2">
+<img alt="Gradient Abstract" class="w-full h-full object-cover filter grayscale" data-alt="A stark, high-contrast abstract composition featuring sharp geometric shapes cutting across a textured, noisy background. The aesthetic relies heavily on the stark contrast between deep blacks and bright whites, resembling an early computer graphics experiment. It feels engineered, rebellious, and unapologetically digital." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0YUnKId4pavot93muYzhVWIIyMI_rJ-6JQtdDZhcskqtGCUZAAuk2VjZgdUX2Lbc_XH0oaDZceB0rG_wDOCGD8iP9JLBZ1sJnybDNfCKFf_kyigcwL4OowOshyZO0BQ2fhfUPr05vPT2FoSKmIgrZpt-jRKw87hLo4QT7xKkhHHAYbwCOzbOP558AKbcZzDFj0UY39ZlnT8DJ4__nZBvAaq2cfoOsFIurZ1RR5zei3KWdMVEQe1A0TvSQz-qYa7EfoxjYetzh4iQ"/>
+<div class="absolute top-2 left-2 bg-on-background text-primary-fixed font-label-caps text-label-caps px-1">ERR_CODE: 502</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="font-body-md text-body-md font-bold">VECTOR_MATH</div>
+<span class="material-symbols-outlined text-secondary text-sm">favorite</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar from JSON -->
+<!-- Displayed on mobile, hidden on web -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-surface border-t-spacing-border-width border-on-background z-50">
+<!-- Inactive item -->
+<div class="flex flex-col items-center justify-center text-on-surface h-full w-full hover:bg-surface-container-highest active:bg-primary-container cursor-pointer border-r-2 border-on-background">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1">FEED</span>
+</div>
+<!-- Inactive item -->
+<div class="flex flex-col items-center justify-center text-on-surface h-full w-full hover:bg-surface-container-highest active:bg-primary-container cursor-pointer border-r-2 border-on-background">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps mt-1">SCAN</span>
+</div>
+<!-- Inactive item -->
+<div class="flex flex-col items-center justify-center text-on-surface h-full w-full hover:bg-surface-container-highest active:bg-primary-container cursor-pointer border-r-2 border-on-background">
+<span class="material-symbols-outlined">alternate_email</span>
+<span class="font-label-caps text-label-caps mt-1">MAIL</span>
+</div>
+<!-- Active item (User Profile) -->
+<div class="flex flex-col items-center justify-center bg-primary text-on-primary h-full w-full cursor-pointer">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-caps text-label-caps mt-1">USER</span>
+</div>
+</nav>
+</body></html>
